@@ -12,7 +12,7 @@ module stepper(input step,
   assign motor[0] = ~motor[1];
 
   always @(posedge step) begin
-    state <= state + 1;
+    state <= state + (dir ? 1 : -1);
   end
   
 endmodule
